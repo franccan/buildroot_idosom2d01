@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - apt-get update -y
+      - apt-get install build-essential file wget cpio python python3 unzip rsync bc git -y
+
+  build:
+    commands:
+      - make bootstrap 
+      - make buildroot-dl
+      - make buildroot-rescue-dl
+      - make
+      - ls outputs/
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'output'
