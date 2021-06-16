@@ -4,6 +4,8 @@ phases:
     commands:
       - apt-get update -y
       - apt-get install build-essential file wget python3 unzip rsync git -y
+      - apt-get install cpio -y
+      - apt-get install bc -y
   build:
     commands:
       - make bootstrap 
